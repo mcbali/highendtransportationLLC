@@ -121,8 +121,6 @@ h2 {
   font-family: "Open Sans", sans-serif;
   font-size: 1.6rem;
   transition: color 0.3s ease;
-  font-size: clamp(0.8rem, 1vw, 1rem);
-
 }
 
 .header-link:hover {
@@ -294,9 +292,9 @@ section:not(.hero) {
 }
 
 .slides img {
-  width: 65%; /* image takes 65% inside its slide */
+  width: 70%; /* image takes 70% inside its slide */
   object-fit: cover; /* preserves proportions */
-  margin-left: auto; /* centers image horizontally in its 65% */
+  margin-left: auto; /* centers image horizontally in its 70% */
   margin-right: auto;
   display: block;
 }
@@ -309,7 +307,7 @@ section:not(.hero) {
   position: absolute;
   top: 0;
   left: 0; /* keep overlay on the left (or switch to right if needed) */
-  width: 35%;
+  width: 30%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.85);
   display: flex;
@@ -365,7 +363,7 @@ section:not(.hero) {
 
 .slides img {
   transform: translateX(
-    calc((35 / 65) * 100%)
+    calc((30 / 70) * 100%)
   ); /* caption overlay width divided by image width */
 }
 
