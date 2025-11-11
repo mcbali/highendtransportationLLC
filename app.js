@@ -19,7 +19,7 @@ if (sliderContainer) {
   const allImages = sliderContainer.querySelectorAll('.slides img');
 
   // Initial position
-  slidesWrapper.style.transform = `translateX(-${index * 65}%)`;
+  slidesWrapper.style.transform = `translateX(-${index * 70}%)`;
 
   // Create dots
   dotsContainer.innerHTML = '';
@@ -49,7 +49,7 @@ if (sliderContainer) {
     isTransitioning = true;
     index = i;
     slidesWrapper.style.transition = 'transform 0.5s ease-in-out';
-    slidesWrapper.style.transform = `translateX(-${index * 65}%)`;
+    slidesWrapper.style.transform = `translateX(-${index * 70}%)`;
     updateDots();
   }
 
@@ -57,11 +57,11 @@ if (sliderContainer) {
     if (allImages[index].isSameNode(firstClone)) {
       slidesWrapper.style.transition = 'none';
       index = 1;
-      slidesWrapper.style.transform = `translateX(-${index * 65}%)`;
+      slidesWrapper.style.transform = `translateX(-${index * 70}%)`;
     } else if (allImages[index].isSameNode(lastClone)) {
       slidesWrapper.style.transition = 'none';
       index = allImages.length - 2;
-      slidesWrapper.style.transform = `translateX(-${index * 65}%)`;
+      slidesWrapper.style.transform = `translateX(-${index * 70}%)`;
     }
     isTransitioning = false;
     updateDots();
@@ -85,18 +85,28 @@ if (sliderContainer) {
     if (!isSwiping) return;
     const dx = e.touches[0].clientX - startX;
     const sliderWidth = sliderContainer.querySelector('.slider-wrapper').offsetWidth;
-    slidesWrapper.style.transform = `translateX(${-index * 65 + (dx / sliderWidth) * 100}%)`;
+    slidesWrapper.style.transform = `translateX(${-index * 70 + (dx / sliderWidth) * 100}%)`;
   });
 
   slidesWrapper.addEventListener('touchend', e => {
     if (!isSwiping) return;
     const dx = e.changedTouches[0].clientX - startX;
-    if (dx > 50) showSlide(index - 1);
-    else if (dx < -50) showSlide(index + 1);
-    slidesWrapper.style.transition = 'transform 0.5s ease-in-out';
+
+    // Commit to a direction even for small swipes, but ignore tiny finger jitter (<10px)
+    if (dx > 10) {
+      showSlide(index - 1);
+    } else if (dx < -10) {
+      showSlide(index + 1);
+    } else {
+      // If almost no movement, snap back to current slide
+      slidesWrapper.style.transition = 'transform 0.3s ease-in-out';
+      slidesWrapper.style.transform = `translateX(-${index * 70}%)`;
+    }
+
     isSwiping = false;
     pauseAutoSlide(10000);
   });
+
 
   // Enlarge image
   images.forEach((img, i) => {
