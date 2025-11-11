@@ -121,7 +121,7 @@ h2 {
   text-decoration: none;
   font-family: "Open Sans", sans-serif;
   font-size: 1.6rem;
-  font-size: clamp(1rem, 1.5vw, 1.6rem);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
 
   transition: color 0.3s ease;
 }
@@ -541,13 +541,13 @@ footer {
 
 @media (max-width: 480px) {
     html {
-    font-size: 50%;
+    font-size: 48%;
   }
 }
 
 @media (max-width: 390px) {
   html {
-    font-size: 50%;
+    font-size: 45%;
   }
 
 }
