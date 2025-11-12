@@ -149,7 +149,7 @@ h2 {
 }
 .btn-outline-2 {
   color: var(--white);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.295);
   background: transparent;
 }
 
@@ -559,6 +559,9 @@ footer {
   }
   .hero-content h2 {
     margin-bottom: 1rem;
+  }
+  .gallery {
+    text-align: center;
   }
 }
 
