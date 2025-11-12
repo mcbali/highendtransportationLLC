@@ -1,164 +1,573 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>High-End Transportation, LLC</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="assets/logo.png" type="image/png">
-    <meta name="format-detection" content="telephone=no">
-</head>
-<body>
-    <header class="sticky-header">
-    <div class="header-content">
-        <img src="assets/transparent_logo2.png" alt="High-End Transportation logo" class="logo" id="logo">
+/* !IMPORT FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Sawarabi+Gothic&display=swap");
 
-        <div class="contact-links">
-            <a href="tel:5624857870" class="header-link">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="contact-icon-2">
-                    <path d="M9.36556 10.6821C10.302 12.3288 11.6712 13.698 13.3179 14.6344L14.2024 13.3961C14.4965 12.9845 15.0516 12.8573 15.4956 13.0998C16.9024 13.8683 18.4571 14.3353 20.0789 14.4637C20.599 14.5049 21 14.9389 21 15.4606V19.9234C21 20.4361 20.6122 20.8657 20.1022 20.9181C19.5723 20.9726 19.0377 21 18.5 21C9.93959 21 3 14.0604 3 5.5C3 4.96227 3.02742 4.42771 3.08189 3.89776C3.1343 3.38775 3.56394 3 4.07665 3H8.53942C9.0611 3 9.49513 3.40104 9.5363 3.92109C9.66467 5.54288 10.1317 7.09764 10.9002 8.50444C11.1427 8.9484 11.0155 9.50354 10.6039 9.79757L9.36556 10.6821Z"></path>
-                </svg>
-                +1 (562) 485-7870
-            </a>
-        </div>
-    </div>
-    </header>
+/* !RESET/BASE */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    <section class="hero">
-        <div class="overlay"></div>
-        <div class="hero-content">
-            <h2>High-End Transportation, LLC</h2>
-            <h1 class="tagline">Ride in <span class="cursive">Style</span></h1>
-            <div class="hero-btns">
-                <a href="tel:5624857870" class="btn btn-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                    <path d="M9.36556 10.6821C10.302 12.3288 11.6712 13.698 13.3179 14.6344L14.2024 13.3961C14.4965 12.9845 15.0516 12.8573 15.4956 13.0998C16.9024 13.8683 18.4571 14.3353 20.0789 14.4637C20.599 14.5049 21 14.9389 21 15.4606V19.9234C21 20.4361 20.6122 20.8657 20.1022 20.9181C19.5723 20.9726 19.0377 21 18.5 21C9.93959 21 3 14.0604 3 5.5C3 4.96227 3.02742 4.42771 3.08189 3.89776C3.1343 3.38775 3.56394 3 4.07665 3H8.53942C9.0611 3 9.49513 3.40104 9.5363 3.92109C9.66467 5.54288 10.1317 7.09764 10.9002 8.50444C11.1427 8.9484 11.0155 9.50354 10.6039 9.79757L9.36556 10.6821ZM6.84425 10.0252L8.7442 8.66809C8.20547 7.50514 7.83628 6.27183 7.64727 5H5.00907C5.00303 5.16632 5 5.333 5 5.5C5 12.9558 11.0442 19 18.5 19C18.667 19 18.8337 18.997 19 18.9909V16.3527C17.7282 16.1637 16.4949 15.7945 15.3319 15.2558L13.9748 17.1558C13.4258 16.9425 12.8956 16.6915 12.3874 16.4061L12.3293 16.373C10.3697 15.2587 8.74134 13.6303 7.627 11.6707L7.59394 11.6126C7.30849 11.1044 7.05754 10.5742 6.84425 10.0252Z"></path>
-                </svg>
-                Call
-                </a>
-                <a href="sms:15624857870?body=Hi,%20I'd%20like%20to%20book%20a%20ride." class="btn btn-outline-1">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                    <path d="M7.29117 20.8242L2 22L3.17581 16.7088C2.42544 15.3056 2 13.7025 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C10.2975 22 8.6944 21.5746 7.29117 20.8242ZM7.58075 18.711L8.23428 19.0605C9.38248 19.6745 10.6655 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 13.3345 4.32549 14.6175 4.93949 15.7657L5.28896 16.4192L4.63416 19.3658L7.58075 18.711Z"></path>
-                </svg>
-                Text
-                </a>
-                <a href="https://wa.me/15624857870?text=Hi,%20I'd%20like%20to%20book%20a%20ride." class="btn btn-outline-2">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M7.25361 18.4944L7.97834 18.917C9.18909 19.623 10.5651 20 12.001 20C16.4193 20 20.001 16.4183 20.001 12C20.001 7.58172 16.4193 4 12.001 4C7.5827 4 4.00098 7.58172 4.00098 12C4.00098 13.4363 4.37821 14.8128 5.08466 16.0238L5.50704 16.7478L4.85355 19.1494L7.25361 18.4944ZM2.00516 22L3.35712 17.0315C2.49494 15.5536 2.00098 13.8345 2.00098 12C2.00098 6.47715 6.47813 2 12.001 2C17.5238 2 22.001 6.47715 22.001 12C22.001 17.5228 17.5238 22 12.001 22C10.1671 22 8.44851 21.5064 6.97086 20.6447L2.00516 22ZM8.39232 7.30833C8.5262 7.29892 8.66053 7.29748 8.79459 7.30402C8.84875 7.30758 8.90265 7.31384 8.95659 7.32007C9.11585 7.33846 9.29098 7.43545 9.34986 7.56894C9.64818 8.24536 9.93764 8.92565 10.2182 9.60963C10.2801 9.76062 10.2428 9.95633 10.125 10.1457C10.0652 10.2428 9.97128 10.379 9.86248 10.5183C9.74939 10.663 9.50599 10.9291 9.50599 10.9291C9.50599 10.9291 9.40738 11.0473 9.44455 11.1944C9.45903 11.25 9.50521 11.331 9.54708 11.3991C9.57027 11.4368 9.5918 11.4705 9.60577 11.4938C9.86169 11.9211 10.2057 12.3543 10.6259 12.7616C10.7463 12.8783 10.8631 12.9974 10.9887 13.108C11.457 13.5209 11.9868 13.8583 12.559 14.1082L12.5641 14.1105C12.6486 14.1469 12.692 14.1668 12.8157 14.2193C12.8781 14.2457 12.9419 14.2685 13.0074 14.2858C13.0311 14.292 13.0554 14.2955 13.0798 14.2972C13.2415 14.3069 13.335 14.2032 13.3749 14.1555C14.0984 13.279 14.1646 13.2218 14.1696 13.2222V13.2238C14.2647 13.1236 14.4142 13.0888 14.5476 13.097C14.6085 13.1007 14.6691 13.1124 14.7245 13.1377C15.2563 13.3803 16.1258 13.7587 16.1258 13.7587L16.7073 14.0201C16.8047 14.0671 16.8936 14.1778 16.8979 14.2854C16.9005 14.3523 16.9077 14.4603 16.8838 14.6579C16.8525 14.9166 16.7738 15.2281 16.6956 15.3913C16.6406 15.5058 16.5694 15.6074 16.4866 15.6934C16.3743 15.81 16.2909 15.8808 16.1559 15.9814C16.0737 16.0426 16.0311 16.0714 16.0311 16.0714C15.8922 16.159 15.8139 16.2028 15.6484 16.2909C15.391 16.428 15.1066 16.5068 14.8153 16.5218C14.6296 16.5313 14.4444 16.5447 14.2589 16.5347C14.2507 16.5342 13.6907 16.4482 13.6907 16.4482C12.2688 16.0742 10.9538 15.3736 9.85034 14.402C9.62473 14.2034 9.4155 13.9885 9.20194 13.7759C8.31288 12.8908 7.63982 11.9364 7.23169 11.0336C7.03043 10.5884 6.90299 10.1116 6.90098 9.62098C6.89729 9.01405 7.09599 8.4232 7.46569 7.94186C7.53857 7.84697 7.60774 7.74855 7.72709 7.63586C7.85348 7.51651 7.93392 7.45244 8.02057 7.40811C8.13607 7.34902 8.26293 7.31742 8.39232 7.30833Z"></path></svg>
-                WhatsApp
-                </a>
+/* !ROOT VARIABLES */
+:root {
+  --body-font-family: "Montserrat", "Open Sans", sans-serif;
+  --body-font-color: #fff;
+  --light-color: #fff;
+  --dark-color: #0b0b0b; /* main background */
+  --dark-color-lighter: #111; /* gallery/footer background */
+  --darker-color: #000000; /* gallery/footer background */
+  --muted: #bdb6ad;
+  --accent-1: #c59b2e;
+  --accent-2: #d4b86a;
+  --accent-3: #ffcf40; /* gold/yellow accent */
+  --white: #ffffff;
+  --radius: 14px;
+  --gap: 10px;
+  --max-width: 1100px;
+}
 
-            </div>
-        </div>
-    </section>
+/* !BASE STYLING */
+html {
+  font-size: 62.5%; /* 10px */
+}
 
-    <section class="gallery">
-        <h2 class="side-text-aligned white-line">Luxury on Wheels</h2>
-        <!-- Cadillac Escalade -->
-        <div class="vehicle-slider">
-            <div class="slider-wrapper">
-            <div class="slider">
-                <div class="slides">
-                <img src="assets/ed_front.JPG" alt="Front view of Escalade">
-                <img src="assets/front_view1.png" alt="Interior view of Escalade">
-                <img src="assets/front_view2.jpg" alt="Interior view of Escalade">
-                <img src="assets/interior1.png" alt="Interior view of Escalade">
-                <img src="assets/interior2.png" alt="Interior view of Escalade">
-                <img src="assets/ed_back.JPG" alt="Rear view of Escalade">
-                <img src="assets/back_view1.png" alt="Interior view of Escalade">
-                </div>
+body {
+  font-size: 1.6rem;
+  font-family: var(--body-font-family);
+  font-weight: 400;
+  color: var(--body-font-color);
+  line-height: 1.6;
+  text-align: center;
+  scroll-behavior: smooth;
+  background-color: var(--dark-color);
+}
 
-                <div class="caption-overlay">
-                    <h3>2026<br>BLACK<br>CADILLAC<br>ESCALADE</h3>
-                    <p id="rate">$100/hr</p>
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                        <path d="M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22H18C18 18.6863 15.3137 16 12 16C8.68629 16 6 18.6863 6 22H4ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM12 11C14.21 11 16 9.21 16 7C16 4.79 14.21 3 12 3C9.79 3 8 4.79 8 7C8 9.21 9.79 11 12 11Z"></path>
-                        </svg> 6
-                    </p>
-                    <p>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                        <path d="M15 3C15.5523 3 16 3.44772 16 4V6H21C21.5523 6 22 6.44772 22 7V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V7C2 6.44772 2.44772 6 3 6H8V4C8 3.44772 8.44772 3 9 3H15ZM16 8H8V19H16V8ZM4 8V19H6V8H4ZM14 5H10V6H14V5ZM18 8V19H20V8H18Z"></path>
-                        </svg> 6
-                    </p>
-                </div>
-                <button class="next">&#10095;</button>
-            </div>
-            <div class="dots"></div>
-            </div>
-        </div>
-    </section>
+svg {
+  vertical-align: middle;
+}
 
-    <section class="about">
-        <img src="assets/samuel-branch-YeEx_N0QcxQ-unsplash.jpg" alt="" class="about-img">
-        <div class="about-content">
-            <h2 class="side-text-aligned white-line">Chaffeur Service</h2>
-            <p>
-                High-End Transportation LLC offers clients a professional chauffeur in a 2026 Black Cadillac Escalade, 
-                providing premium private transportation for airport transfers, corporate events, and special occasions.
-            </p>
-            <ul class="about-list">
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="contact-icon-2">
-                        <path d="M9.36556 10.6821C10.302 12.3288 11.6712 13.698 13.3179 14.6344L14.2024 13.3961C14.4965 12.9845 15.0516 12.8573 15.4956 13.0998C16.9024 13.8683 18.4571 14.3353 20.0789 14.4637C20.599 14.5049 21 14.9389 21 15.4606V19.9234C21 20.4361 20.6122 20.8657 20.1022 20.9181C19.5723 20.9726 19.0377 21 18.5 21C9.93959 21 3 14.0604 3 5.5C3 4.96227 3.02742 4.42771 3.08189 3.89776C3.1343 3.38775 3.56394 3 4.07665 3H8.53942C9.0611 3 9.49513 3.40104 9.5363 3.92109C9.66467 5.54288 10.1317 7.09764 10.9002 8.50444C11.1427 8.9484 11.0155 9.50354 10.6039 9.79757L9.36556 10.6821Z"></path>
-                    </svg>
-                    <strong>Phone:</strong> 
-                    <a href="tel:+15624857870"> +1 (562) 485-7870</a></li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="contact-icon-2">
-                        <path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM20 7.23792L12.0718 14.338L4 7.21594V19H20V7.23792ZM4.51146 5L12.0619 11.662L19.501 5H4.51146Z"></path>
-                    </svg>
-                    <strong>Email:</strong> <a href="mailto:transportationllc@gmail.com">transportationllc@gmail.com</a></li>
-            </ul>
-        </div>
-    </section>
+a:active {
+  color: var(--white);
+}
 
-    <section class="services">
-        <h2 class="side-text-aligned white-line">Services</h2>
-        <div class="cards">
-            <article class="card">
-                <h4>Airport Transfer</h4>
-                <p>Timely pickups and drop offs to/from Las Vegas airports.</p>
-            </article>
-            <article class="card">
-                <h4>Corporate and Executive</h4>
-                <p>Professional and discreet service for business travelers and VIPs.</p>
-            </article>
-            <article class="card">
-                <h4>Special Occasions</h4>
-                <p>Arrive in style for weddings, parties, or other memorable events.</p>
-            </article>
-            <article class="card">
-                <h4>Hourly Charter</h4>
-                <p>Book flexible hourly service ideal for tours, sightseeing, or multiple stops.</p>
-            </article>
-        </div>
-    </section>
+h2 {
+  font-weight: 250;
+  font-size: 2.8rem;
+  letter-spacing: 0.08rem;
+  text-align: left;
+}
 
-    <section class="contact">
-        <h2>Contact</h2>
-        <div class="contact-content">
-        <p>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="contact-icon">
-                <path d="M12 20.8995L16.9497 15.9497C19.6834 13.2161 19.6834 8.78392 16.9497 6.05025C14.2161 3.31658 9.78392 3.31658 7.05025 6.05025C4.31658 8.78392 4.31658 13.2161 7.05025 15.9497L12 20.8995ZM12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364L12 23.7279ZM12 13C13.1046 13 14 12.1046 14 11C14 9.89543 13.1046 9 12 9C10.8954 9 10 9.89543 10 11C10 12.1046 10.8954 13 12 13Z"></path>
-            </svg>
-            Las Vegas, NV
-        </p>
-        <p>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="contact-icon">
-                <path d="M9.36556 10.6821C10.302 12.3288 11.6712 13.698 13.3179 14.6344L14.2024 13.3961C14.4965 12.9845 15.0516 12.8573 15.4956 13.0998C16.9024 13.8683 18.4571 14.3353 20.0789 14.4637C20.599 14.5049 21 14.9389 21 15.4606V19.9234C21 20.4361 20.6122 20.8657 20.1022 20.9181C19.5723 20.9726 19.0377 21 18.5 21C9.93959 21 3 14.0604 3 5.5C3 4.96227 3.02742 4.42771 3.08189 3.89776C3.1343 3.38775 3.56394 3 4.07665 3H8.53942C9.0611 3 9.49513 3.40104 9.5363 3.92109C9.66467 5.54288 10.1317 7.09764 10.9002 8.50444C11.1427 8.9484 11.0155 9.50354 10.6039 9.79757L9.36556 10.6821Z"></path>
-            </svg>
-            Phone: +1 (562) 485-7870
-        </p>
-        <p>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="contact-icon">
-                <path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM20 7.23792L12.0718 14.338L4 7.21594V19H20V7.23792ZM4.51146 5L12.0619 11.662L19.501 5H4.51146Z"></path>
-            </svg>
-            Email: transportationllc@gmail.com
-        </p>
-        </div>
-    </section>
+.white-line {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
 
-    <footer>&copy; 2025 High-End Transportation, LLC. All rights reserved.</footer>
-    <script src="./app.js"></script>
-</body>
-</html>
+.white-line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.2rem;
+  width: 100%;
+  height: .01rem;
+  background-color: var(--white);
+}
+
+/* HEADER */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* semi-transparent for sleek overlay look */
+  backdrop-filter: blur(0.6rem);
+  z-index: 1000;
+}
+
+.sticky-header .header-content {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between; /* logo left, links right */
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto; /* center content block horizontally */
+  gap: 3rem;
+  flex-wrap: nowrap;
+}
+
+.contact-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* space between phone and email links */
+  white-space: nowrap;
+}
+
+.logo {
+  height: 7rem;
+  width: auto;
+  object-fit: contain;
+  padding-top: 0.2rem;
+}
+
+.header-link {
+  color: var(--accent-2);
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.6rem;
+  font-size: clamp(.5rem, 3vw, 1.6rem);
+  transition: color 0.3s ease;
+}
+
+.header-link:hover {
+  color: var(--light-color);
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 1.4rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.6rem;
+  text-align: center;
+}
+.btn-primary {
+  background: linear-gradient(180deg, var(--accent-1), var(--accent-2));
+  color: #08120b;
+  box-shadow: 0 0.6rem 2rem rgba(198, 158, 56, 0.18);
+}
+.btn-outline-1 {
+  color: var(--accent-2);
+  border: 0.1rem solid var(--accent-2);
+  background: transparent;
+}
+.btn-outline-2 {
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.295);
+  background: transparent;
+}
+
+/* !HERO */
+.hero {
+  background: url("assets/hero.png") center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero h2 {
+  text-align: center;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-content h2 {
+  margin-bottom: 2.5rem;
+  font-size: 3rem;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.cursive {
+  font-family: "Great Vibes", cursive;
+  font-size: 5.2rem;
+  color: var(--accent-3);
+  margin-left: 6px;
+}
+section:not(.hero) {
+  padding: 6rem 10%;
+}
+/* !ABOUT */
+.about {
+  display: flex;
+  justify-content: space-between; /* logo left, links right */
+  align-items: center;
+  background-color: var(--dark-color-lighter);
+}
+
+.about-img {
+  max-width: 50vh;
+  border-radius: 15px;
+  box-shadow: 0 0.5rem 0.5rem rgba(198, 158, 56, 0.18);
+  object-fit: cover;
+  display: none;
+  margin-right: 3rem;
+}
+
+.about-content {
+  text-align: left;
+}
+
+.about-content p {
+  margin: 1rem 0;
+}
+
+.about-content ul {
+  color: var(--muted);
+  list-style-type: none;
+}
+
+.about-content ul a {
+  color: var(--accent-2);
+}
+
+/* !GALLERY */
+.gallery {
+  align-items: center;
+  background: var(--dark-color);
+  text-align: left;
+}
+
+.vehicle-slider {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+}
+
+.slider-wrapper,
+.slider,
+.slides {
+  width: 100%;
+  height: auto;
+}
+
+.slides img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* !SLIDER */
+.slider-wrapper {
+  position: relative;
+  margin: 1.5em auto;
+}
+
+.slider {
+  position: relative;
+  overflow: hidden; /* clips slides outside container */
+}
+
+.slides {
+  display: flex;
+  width: 100%; /* total width of all slides container */
+  transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+  width: 70%; /* image takes 70% inside its slide */
+  object-fit: cover; /* preserves proportions */
+  margin-left: auto; /* centers image horizontally in its 70% */
+  margin-right: auto;
+  display: block;
+}
+
+.slides img:hover {
+  cursor: zoom-in;
+}
+
+.caption-overlay {
+  position: absolute;
+  top: 0;
+  left: 0; /* keep overlay on the left (or switch to right if needed) */
+  width: 30%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column; /* stack h3 + p vertically */
+  justify-content: center;
+  align-items: flex-end; /* aligns text to the right */
+  padding: clamp(1rem, 3vw, 3rem);
+  text-align: right;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Caption heading */
+.caption-overlay h3 {
+  color: var(--accent-3);
+  font-size: clamp(1rem, 3.5vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  text-shadow: 0 0 0.6rem rgba(245, 197, 24, 0.3);
+  letter-spacing: 0.15rem;
+  margin-bottom: 1rem;
+  word-break: break-word;
+  max-width: 100%;
+}
+
+/* Caption subtext */
+.caption-overlay p {
+  display: block;
+  font-size: clamp(0.75rem, 2.5vw, 2rem);
+  color: #fff;
+  padding: 0.3rem;
+  line-height: 1.3;
+  opacity: 0.95;
+  word-break: break-word;
+  max-width: 100%;
+}
+
+.caption-overlay p svg {
+  transform: translateY(-13%);
+  width: clamp(0.75rem, 2.5vw, 2rem);
+  height: clamp(0.75rem, 2.5vw, 2rem);
+}
+
+#rate {
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+
+/* Make image shift to the right side visually */
+.slides {
+  justify-content: flex-start; /* keep slides aligned left */
+}
+
+.slides img {
+  transform: translateX(
+    calc((30 / 70) * 100%)
+  ); /* caption overlay width divided by image width */
+}
+
+/* Adjust navigation arrows */
+.prev {
+  display: none; /* keep prev arrow visible */
+}
+
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 2rem;
+  z-index: 10;
+}
+
+.next {
+  right: 1rem;
+}
+
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dots {
+  text-align: center;
+  margin-top: 1rem; /* spacing from slider */
+}
+
+.dot {
+  display: inline-block;
+  width: clamp(0.8rem, 1.2vw, 1.4rem); /* scales between 8px and 14px */
+  height: clamp(0.8rem, 1.2vw, 1.4rem); /* keeps it square */
+  margin: 0 clamp(0.3rem, 0.5vw, 0.6rem); /* horizontal spacing */
+  background-color: var(--muted);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.dot.active {
+  background-color: var(--white);
+  transform: scale(1.2); /* slightly bigger when active */
+}
+
+/* !SERVICES */
+.services {
+  text-align: left;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.card {
+  background-color: var(--dark-color);
+  border: 0.1rem solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.2rem;
+  box-shadow: 0 0.1rem 0.4rem rgba(255, 255, 255, 0.08);
+  padding: 1.4rem;
+  width: auto;
+}
+
+.card h3 {
+  margin: 0 0 6px 0;
+  font-size: 1.6rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.4rem;
+}
+
+/* !CONTACT */
+.contact {
+  background: var(--darker-color);
+}
+
+.contact h2 {
+  text-align: center;
+  color: var(--accent-2);
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2.5rem;
+}
+
+.contact h2::after {
+  content: "";
+  position: absolute;
+  bottom: -0.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 0.05rem;
+  background-color: var(--accent-2);
+  border-radius: 0.2rem;
+}
+
+.contact p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+  color: var(--body-font-color);
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* !ICONS */
+.contact-content svg,
+.btn svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.contact-icon-2 {
+  transform: translateY(-0.1rem);
+}
+
+/* !FOOTER */
+footer {
+  background: var(--dark-color-lighter);
+  padding: 2rem;
+  color: #777;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .side-text-aligned,
+  .about-content p,
+  .about-content ul {
+    text-align: left;
+  }
+  .about-img {
+    display: block;
+  }
+}
+
+/* !RESPONSIVE */
+@media (max-width: 1024px) {
+  html {
+    font-size: 60%;
+  }
+  .hero-content {
+    padding: 0 2rem;
+  }
+  .gallery,
+  .about,
+  .contact {
+    padding: 4rem 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+  .hero {
+    height: 70vh;
+    background-position: center top;
+  }
+  h2::after {
+    width: 50%;
+    bottom: -0.6rem;
+  }
+  .slider {
+    max-width: 100%;
+    margin: 1.5rem auto;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 48%;
+  }
+  .hero { height: 60vh; }
+  .white-line {
+    margin-bottom: 1rem;
+  }
+  .hero-content h2 {
+    margin-bottom: 1rem;
+  }
+  .gallery {
+    text-align: center;
+  }
+}
+
+@media (max-width: 390px) {
+  html {
+    font-size: 45%;
+  }
+  .hero { height: 55vh; }
+}
