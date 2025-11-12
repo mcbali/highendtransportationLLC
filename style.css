@@ -464,7 +464,7 @@ section:not(.hero) {
   left: 50%;
   transform: translateX(-50%);
   width: 60%;
-  height: 0.2rem;
+  height: 0.05rem;
   background-color: var(--accent-2);
   border-radius: 0.2rem;
 }
