@@ -53,7 +53,7 @@ a:active {
 }
 
 h2 {
-  font-weight: 500;
+  font-weight: 200;
   font-size: 2.8rem;
   letter-spacing: 0.08rem;
   text-align: left;
@@ -71,8 +71,8 @@ h2 {
   left: 0;
   bottom: -0.2rem;
   width: 100%;
-  height: 1px;
-  background-color: white;
+  height: .01rem;
+  background-color: var(--white);
 }
 
 /* HEADER */
@@ -244,7 +244,7 @@ section:not(.hero) {
 .gallery {
   align-items: center;
   background: var(--dark-color);
-  text-align: center;
+  text-align: left;
 }
 
 .vehicle-slider {
