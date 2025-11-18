@@ -242,7 +242,7 @@ section:not(.hero) {
 }
 
 .about-img-2 {
-  width: clamp(31rem, 40vw, 50rem);
+  width: clamp(31rem, 40vw, 45rem);
   border-radius: 15px;
   box-shadow: 0.5rem 0.5rem 0.5rem rgba(198, 158, 56, 0.25);
   object-fit: cover;
@@ -573,7 +573,7 @@ footer {
 /* !RESPONSIVE */
 @media (max-width: 1024px) {
   html {
-    font-size: 55%;
+    font-size: 57%;
   }
   .hero-content {
     padding: 0 2rem;
