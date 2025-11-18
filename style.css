@@ -205,7 +205,7 @@ section:not(.hero) {
 }
 /* !ABOUT */
 .about {
-  background-color: var(--darker-color);
+  background-color: var(--dark-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -238,7 +238,7 @@ section:not(.hero) {
   box-shadow: 0 1rem 2rem rgba(198, 158, 56, 0.45);
   object-fit: cover;
   display: block;
-  margin-bottom: 2rem;
+  margin-bottom: 2.8rem;
 }
 
 .about-img-2 {
@@ -272,7 +272,7 @@ section:not(.hero) {
 /* !GALLERY */
 .gallery {
   align-items: center;
-  background: var(--dark-color);
+  background: var(--darker-color);
   text-align: left;
 }
 
@@ -426,7 +426,7 @@ section:not(.hero) {
 /* !SERVICES */
 .services {
   text-align: left;
-  background-color: var(--dark-color-lighter);
+  background-color: var(--dark-color);
 }
 
 .cards {
