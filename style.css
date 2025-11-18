@@ -235,7 +235,7 @@ section:not(.hero) {
 .about-img-1 {
   max-width: 20vh;
   border-radius: 50%;
-  box-shadow: 0 8px 20px rgba(198, 158, 56, 0.35);
+  box-shadow: 0 1rem 2rem rgba(198, 158, 56, 0.45);
   object-fit: cover;
   display: block;
   margin-bottom: 2rem;
@@ -272,7 +272,7 @@ section:not(.hero) {
 /* !GALLERY */
 .gallery {
   align-items: center;
-  background: var(--dark-color-lighter);
+  background: var(--dark-color);
   text-align: left;
 }
 
@@ -426,6 +426,7 @@ section:not(.hero) {
 /* !SERVICES */
 .services {
   text-align: left;
+  background-color: var(--dark-color-lighter);
 }
 
 .cards {
