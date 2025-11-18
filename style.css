@@ -205,7 +205,7 @@ section:not(.hero) {
 }
 /* !ABOUT */
 .about {
-  background-color: var(--dark-color-lighter);
+  background-color: var(--darker-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -272,7 +272,7 @@ section:not(.hero) {
 /* !GALLERY */
 .gallery {
   align-items: center;
-  background: var(--dark-color);
+  background: var(--dark-color-lighter);
   text-align: left;
 }
 
