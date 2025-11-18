@@ -59,6 +59,10 @@ h2 {
   text-align: left;
 }
 
+strong {
+  font-weight: 600;
+}
+
 .white-line {
   position: relative;
   display: inline-block;
